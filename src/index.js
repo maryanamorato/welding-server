@@ -1,19 +1,19 @@
 require('./models/User')
-require('./models/Track')
+require('./models/Equipment')
 const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const authRoutes = require('./routes/authRoutes')
-const trackRoutes = require('./routes/trackRoutes')
+const equipmentRoutes = require('./routes/equipmentRoutes')
 const requireAuth = require('./middlewares/requireAuth')
 
 const app = express()
 
 app.use(bodyParser.json());
 app.use(authRoutes);
-app.use(trackRoutes);
+app.use(equipmentRoutes);
 
-const mongoUri = 'mongodb+srv://natahouse:natahouse@cluster0-nkyl6.gcp.mongodb.net/test?retryWrites=true&w=majority'
+const mongoUri = 'mongodb+srv://maryana:maryana@cluster0.jvotj.gcp.mongodb.net/equipments?retryWrites=true&w=majority'
 mongoose.connect(mongoUri, {
     useNewUrlParser: true,
     useCreateIndex: true,
