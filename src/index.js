@@ -32,6 +32,6 @@ app.get('/', requireAuth, (req, res) => {
     res.send(`Your email: ${req.user.email}`)
 })
 
-app.listen(3008, ()=>{
+app.listen(process.env.PORT, ()=>{
     console.log("Listening on 3008")
 })
