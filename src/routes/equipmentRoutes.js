@@ -6,7 +6,7 @@ const Equipment = mongoose.model("Equipment");
 
 const router = express.Router();
 
-router.use(requireAuth);
+// router.use(requireAuth);
 
 router.get("/equipments", async (req, res) => {
   const equipments = await Equipment.find();
